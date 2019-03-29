@@ -1,0 +1,41 @@
+<div>
+  <table align="center" border="1px">
+    <thead>
+      <th>Item Name</th>
+      <th>Item Qty</th>
+      <th>Item Bought</th>
+    </thead>
+    <tbody>
+      <tr *ngFor='let itm of item'>
+        <td>{{itm.itemname}}</td>
+        <td>{{itm.itemqty}}</td>
+        <td>{{itm.itembought}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<br><br>
+
+<div>
+
+  <h3>Add Item</h3>
+
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="itemname">Item Name:
+      </label>
+      <input type="text" formControlName="itemname" id="itemname" />
+    </div>
+
+    <div>
+      <label for="itemqty">Item Qty.:
+      </label>
+      <input type="number" formControlName="itemqty" id="itemqty" />
+    </div>
+
+    <button class="btn btn-success">Save</button>
+  </form>
+</div>
